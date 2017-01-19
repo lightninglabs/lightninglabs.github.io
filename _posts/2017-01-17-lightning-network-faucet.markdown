@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Setting up and Testing LND with the Testnet Lightning Faucet"
-date:   2017-01-17 08:00:00 -0800
+date:   2017-01-19 08:00:00 -0800
 author: Laolu Osuntokun
 categories: lnd faucet
 ---
