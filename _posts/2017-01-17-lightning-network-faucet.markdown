@@ -350,8 +350,9 @@ making:
 }%
 ```
 
-Once the funding transaction confirms, you channel will be open and you can
-monitor its state using the `listchannels` command:
+Note in the current release, you'll need to leave your computer active until
+the next block arrives. Once the funding transaction confirms, you channel will
+be open and you can monitor its state using the `listchannels` command:
 
 ```
 ▶ lncli listchannels
