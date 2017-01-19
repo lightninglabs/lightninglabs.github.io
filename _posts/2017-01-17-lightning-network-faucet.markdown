@@ -31,6 +31,7 @@ First, the manual build. Before we begin, ensure that you have
 [`go1.7.4`](https://golang.org/dl/) installed and also that [your `GOPATH` is
 set properly](https://golang.org/doc/code.html#GOPATH). Finally, you'll also
 need to have [`glide`](https://glide.sh/) installed locally:
+
 ```
 go get -u -v github.com/Masterminds/glide
 ```
@@ -46,6 +47,7 @@ transaction has been broadcast, etc.
 Prior to standing up `lnd`, you'll need an active `btcd` node running in
 `testnet` mode. The following commands will properly fetch, build, and start up
 your `btcd` node:
+
 ```
 go get -v -u github.com/roasbeef/btcutil
 cd $GOPATH/src/github.com/roasbeef/btcd
@@ -56,6 +58,7 @@ go install . ./cmd/...
 With those command executed, `btcd` will be properly installed on your system.
 Next, we'll need to get the `btcd` node up and running in `testnet` mode (note
 that you should replace `kek` with a username and password of your choice)
+
 ```
 btcd --testnet --txindex --rpcuser=kek --rpcpass=kek
 ```
@@ -68,6 +71,7 @@ Before you can use `lnd` you'll need to wait for `btcd` to finish syncing
 
 With `btcd` installed and syncing, the next step is to repeat a similar process
 to build and start `lnd`:
+
 ```
 $ cd $GOPATH
 $ git clone https://github.com/lightningnetwork/lnd $GOPATH/src/github.com/lightningnetwork/lnd
@@ -81,6 +85,7 @@ and `lncli` (the command-line interface to the daemon) properly installed.
 
 Finally, to start your `lnd` node, execute the following command (replacing
 "kek" with your chosen `rpcuser` and `rpcpass` for `btcd` selected above)
+
 ```
 lnd --testnet --rpcuser=kek --rpcpass=kek
 ```
@@ -107,24 +112,29 @@ running on `testnet`. Assuming you have both `docker` and `docker-compose` set
 up, launching this configuration can be done in just a few commands:
 
   * First we'll start up `btcd` running in `testnet` mode:
+
     ```
     $ cd $GOPATH/src/github.com/lightningnetwork/lnd/docker
     $ export BITCOIN_NETWORK="testnet"
     $ docker-compose up -d "btcd"
     ```
+
   * Next we'll start up our local `lnd` instance and connect it to `btcd`:
+
     ```
     $ docker-compose up -d "alice"
     ```
 
 We can easily obtain a shell to execute `lncli` commands directly to our
 running `lnd` node:
+
 ```
 $ docker exec -i -t "alice" bash
 $ lncli getinfo
 ```
 
 Or access the running logs for either `btcd` or `lnd`: 
+
 ```
 docker-compose logs alice
 ```
@@ -138,6 +148,7 @@ uses the `gRPC` interface to communicate directly with `lnd`.
 The first command we'll explore is `getinfo`. This command will display some
 basic diagnostic information such as the latest block hash and our identity
 public key:
+
 ```
 ▶ lncli getinfo
 {
@@ -164,6 +175,7 @@ understands.
 If the source of your funds understands `lnd`'s native segwit addresses (for
 example, `bcoin`) then you can generate a `p2wkh` (pay-to-witness-key-hash)
 address to send to like so:
+
 ```
 ▶ lncli newaddress p2wkh
 {
@@ -173,6 +185,7 @@ address to send to like so:
 
 Otherwise, you'll need to use a nested p2sh address which are backwards
 compatible to existing wallets:
+
 ```
 ▶ lncli newaddress np2wkh
 {
@@ -182,6 +195,7 @@ compatible to existing wallets:
 
 Once your funds have been sent, you can check your `lnd` wallet's available
 balance (in `BTC`) using the `walletbalance` command:
+
 ```
 ▶ lncli walletbalance
 {
@@ -192,6 +206,7 @@ balance (in `BTC`) using the `walletbalance` command:
 The above command you shows the amount of funds you have available on-chain. In
 order to query for your available off-chain balance (in `satoshis`), the
 `channelbalance` command is provided:
+
 ```
 ▶ lncli channelbalance
 {
@@ -208,10 +223,13 @@ less verbose but will still expose in detail the daemon's actions.
 The `debuglevel` command is provided in order to allow users to dynamically
 tune the logging verbosity of `lnd`. The command can either target a coarse
 grained logging level: 
+
 ```
 lncli debuglevel trace
 ```
+
 Or target a particular sub-system with a fine grained target:
+
 ```
 lncli debuglevel UTXN=debug
 ```
@@ -258,9 +276,11 @@ the following page:
 
 In order to obtain your channel, you'll need to first connect out to the
 faucet's `lnd` node:
+
 ```
 lncli connect 036a0c5ea35df8a528b98edf6f290b28676d51d0fe202b073fe677612a39c0aa09@faucet.lightning.community:10011
 ```
+
 The hex characters within that command are the faucet's public key. The public
 key of a node is required to connect to a node due to the [Lightning Network's
 peer-to-peer cryptographic messaging
@@ -268,6 +288,7 @@ scheme](https://github.com/lightningnetwork/lightning-rfc/blob/master/08-transpo
 
 Once you connect out to the faucet's node, it should show up under `lnd`'s list
 of active peers:
+
 ```
 ▶ lncli listpeers
 {
@@ -311,6 +332,7 @@ here](https://testnet.smartbit.com.au/tx/2e9fece24d4db39649edac3991d2e0913277a8c
 
 Using the `pendingchannels` command, you'll be able to see the channel in the
 making:
+
 ```
 ▶ lncli pendingchannels
 {
@@ -330,6 +352,7 @@ making:
 
 Once the funding transaction confirms, you channel will be open and you can
 monitor its state using the `listchannels` command:
+
 ```
 ▶ lncli listchannels
 {
@@ -355,6 +378,7 @@ faucet. Now it's time to send some multi-hop payments!
 
 A series of commands is bundled with `lncli` that allow you to explore the
 channel graph from the PoV of your node: 
+
 ```
 ▶ lncli getnetworkinfo
 {
@@ -376,6 +400,7 @@ up `4.2 BTC`.
 
 The `describegraph` command will display your node's view of the active channel
 graph (output is truncated):
+
 ```
 ▶ lncli describegraph
 {
@@ -430,6 +455,7 @@ graph (output is truncated):
 
 The `queryroute` command can be used to test the existence of a route between
 your node and a target node:
+
 ```
 ▶ lncli queryroute --dest=03c3cbc887448ff950c32a3561441249f1983322519fcea18cbb7769cbd2f4b995 --amt=1000
 {
@@ -462,6 +488,7 @@ to the destination.
 
 If I'm not running with the `--debug-htlc` flag on, then once I obtain a
 payment request from the payee, I'll be able to send the funds over Lightning:
+
 ```
 ▶ lncli sendpayment --pay_req=yxbhz1r8e1891wgdfe4snty1j8a3oc3nkgxh7ecczp5su16161h3kpu3a9a7pfs63aa14h9bsp17jppm53qquf1x8pzedobcsuouxqgpyyyyyyyyyyb6otom1t8o
 {
@@ -492,6 +519,7 @@ payment request from the payee, I'll be able to send the funds over Lightning:
 The result of the `sendpayment` command shows the path that my payment traveled
 along within the network to reach the final destination. If we check our
 channel, we can see the latest state of the channel:
+
 ```
 ▶ lncli listchannels
 {
@@ -512,6 +540,7 @@ channel, we can see the latest state of the channel:
 
 If we use the `decodepayreq` command, then we can see the payment conditions
 encoded in the payment request:
+
 ```
 ▶ lncli decodepayreq --pay_req=yxbhz1r8e1891wgdfe4snty1j8a3oc3nkgxh7ecczp5su16161h3kpu3a9a7pfs63aa14h9bsp17jppm53qquf1x8pzedobcsuouxqgpyyyyyyyyyyb6otom1t8o
 {
