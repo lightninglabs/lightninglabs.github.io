@@ -262,6 +262,7 @@ The faucet can be found at
 
 Before we get started, it's worth pointing out that the TLF currently has a few
 contraints:
+
   * The faucet will only create _one_ channel per user.
   * The maximum channel size the faucet will create is `4 million satoshis`
   * Finally, there's a minimum channel size of `10k satoshis`
