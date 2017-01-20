@@ -225,13 +225,13 @@ tune the logging verbosity of `lnd`. The command can either target a coarse
 grained logging level: 
 
 ```
-lncli debuglevel trace
+lncli debuglevel --level_spec=trace
 ```
 
 Or target a particular sub-system with a fine grained target:
 
 ```
-lncli debuglevel UTXN=debug
+lncli debuglevel --level_spec=UTXN=debug
 ```
 
 At this point, you should have a fully synced `btcd` running in `testnet` mode
@@ -256,7 +256,7 @@ available, our hope is that the faucet will also be usable with these active
 implementations.
 
 The faucet can be found at
-[faucet.lightning.community](https://faucet.lightning.community).
+[faucet.lightning.community](http://faucet.lightning.community).
 
 ### Faucet Constraints
 
@@ -269,7 +269,7 @@ contraints:
 ### Claiming Your Channel
 
 Once you visit
-[faucet.lightning.community](https://faucet.lightning.community), you'll see
+[faucet.lightning.community](http://faucet.lightning.community), you'll see
 the following page:
 
 ![Faucet](/images/faucet-home.png)
