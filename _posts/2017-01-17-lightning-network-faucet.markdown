@@ -231,7 +231,7 @@ lncli debuglevel --level_spec=trace
 Or target a particular sub-system with a fine grained target:
 
 ```
-lncli debuglevel --level_spec=UTXN=debug
+lncli debuglevel --level=UTXN=debug
 ```
 
 At this point, you should have a fully synced `btcd` running in `testnet` mode
