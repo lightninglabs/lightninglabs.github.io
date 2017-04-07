@@ -15,8 +15,8 @@ first Testnet Lightning Faucet to be compatible with `lnd`.
 
 ## Setting up LND
 
-As of posting time (January 19, 2017),
-[v0.1.1-alpha](https://github.com/lightningnetwork/lnd/releases/tag/v0.1.1-alpha)
+As of posting time (April 7, 2017),
+[v0.2-alpha](https://github.com/lightningnetwork/lnd/releases/tag/v0.2-alpha)
 is the latest release of of `lnd`. You should be able to follow the
 walk-through below using either the latest release or the current `master`
 branch of `lnd`.
@@ -28,7 +28,7 @@ fully packaged instance of `lnd` that uses a docker container.
 ### Manual Build
 
 First, the manual build. Before we begin, ensure that you have
-[`go1.7.4`](https://golang.org/dl/) installed and also that [your `GOPATH` is
+[`go1.8`](https://golang.org/dl/) installed and also that [your `GOPATH` is
 set properly](https://golang.org/doc/code.html#GOPATH). Finally, you'll also
 need to have [`glide`](https://glide.sh/) installed locally:
 
@@ -279,7 +279,7 @@ In order to obtain your channel, you'll need to first connect out to the
 faucet's `lnd` node:
 
 ```
-lncli connect 036a0c5ea35df8a528b98edf6f290b28676d51d0fe202b073fe677612a39c0aa09@faucet.lightning.community:10011
+lncli connect 036a0c5ea35df8a528b98edf6f290b28676d51d0fe202b073fe677612a39c0aa09@faucet.lightning.community:5656
 ```
 
 The hex characters within that command are the faucet's public key. The public
@@ -297,7 +297,7 @@ of active peers:
 		{
 			"pub_key": "036a0c5ea35df8a528b98edf6f290b28676d51d0fe202b073fe677612a39c0aa09",
 			"peer_id": 1,
-			"address": "159.203.125.125:10011",
+			"address": "159.203.125.125:5656",
 			"bytes_sent": 5012,
 			"bytes_recv": 4646
 		}
@@ -411,13 +411,13 @@ graph (output is truncated):
 		{
 			"last_update": 1484790531,
 			"pub_key": "021b96642e723592ee0b095983fe3a26c8b40b8926968d8b7510e51c9429d4562c",
-			"address": "[::]:10011",
+			"address": "[::]:5656",
 			"alias": "021b96642e723592ee0b"
 		},
 		{
 			"last_update": 1484470838,
 			"pub_key": "03dd27dc7f994d932b74bebaf18bf801447a514eb4fb33b0f8000b33c036e51ed2",
-			"address": "[::]:10011",
+			"address": "[::]:5656",
 			"alias": "03dd27dc7f994d932b74"
 		}
 	],
