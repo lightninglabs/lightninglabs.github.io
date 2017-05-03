@@ -1,0 +1,192 @@
+---
+layout: post
+title:  "The “Litening” Network: Litecoin Comes to LND"
+date:   2017-05-03 08:00:00 -0800
+categories: release software lnd lightning
+---
+
+![Two Chainzz](https://ae01.alicdn.com/kf/HTB12oWUMVXXXXbSapXXq6xXFXXXy/-font-b-Silver-b-font-Gold-Plated-Stainless-Steel-Necklace-Femme-Boys-Mens-font-b.jpg)
+
+_By Olaoluwa Osuntokun_
+
+### Segwit Activation on Litecoin
+
+At the time of the writing of this blog post, SegWit is slated to [_activate_
+on Litecoin](http://segwit.co/ltc) within the next two weeks. As the lead
+developers of `lnd` this is extremely exciting for us! The activation of SegWit
+on Litecoin will serve as a proving and hardening ground for the Lightning
+Network until segwit activates on Bitcoin's mainnet. And as Litecoin is _very_
+similar to Bitcoin, we can redirect our pre-production development efforts to
+Litecoin's
+testnet without loss of generality for our ultimate launch on Bitcoin's
+mainnet.
+
+The eventual activation of segwit on Litecoin has many Layer 2 protocol
+developers modifying their codebases and testing infrastructure to target a
+preliminary launch on Litecoin.
+
+Similarly, we are also extremely excited at the prospect of an initial
+production run of Lightning on Litecoin! The activation of segwit on Litecoin
+allows us to deploy Litecoin on an active production blockchain.
+With our ultimate launch, we'll be able to examine monetary incentives within
+the network, observe the emergent properties of the networks' channel graph,
+and see the rise of production services and applications built on top of the
+network.
+
+In this post, we're announcing the (simultaneous) support for Litecoin's
+new testnet within `lnd`, review the additional software infrastructure we built to
+make the shift possible, and provide a brief peek into a Lightning Network that
+spans multiple blockchains.
+
+### Announcing `ltcd`:
+
+As a bit of necessary infrastructure for `lnd's` support of Litecoin's new
+`testnet4`, in collaboration with the Litecoin Developers, we've forked `btcd`
+for Litecoin, creating [ltcd](https://github.com/ltcsuite/ltcd/)! `ltcd` is a
+independent full-node implementation of Litecoin which includes full support
+for the CSV and SegWit soft forks. Anyone is now able to use `ltcd` to interact
+with Litecoin's `testnet4` network, supported by the excellent software
+infrastructure and libraries originally developed by
+[btcsuite](https://github.com/btcsuite/).
+
+Users of `btcd` will be familiar with the `btcctl` command-line tool which
+serves as the control plan for their `btcd` instance. Similar to `btcd`, `ltcd`
+provides the `ltcctl` command-line tool complete with identical functionality:
+
+```
+$ ltcctl --testnet getinfo
+{
+  "version": 120000,
+  "protocolversion": 70002,
+  "blocks": 49146,
+  "timeoffset": 0,
+  "connections": 5,
+  "proxy": "",
+  "difficulty": 21.07561353,
+  "testnet": true,
+  "relayfee": 0.00001,
+  "errors": ""
+}
+```
+
+In collaboration with the Litecoin developer community, we'll continue to maintain
+`ltcd` as a fully independent implementation of `Litecoin` closely following
+the improvements to the mainline [btcd](https://github.com/btcsuite/btcd). The
+creation of `ltcd` was required to add support for Litecoin to `lnd` as
+`btcd's` websockets interface is currently the only concrete supported backend
+for `lnd`.
+
+### `lnd` Now Supports Litecoin!
+
+With `ltcd` created, adding Litecoin support to `lnd` was relatively
+straightforward. However, `lnd` wasn’t modified to _only_ support Litecoin.
+Instead, the necessary scaffolding was added to `lnd` to allow it to (in the
+future) concurrently support _multiple_ chains. At the time of the writing of
+this blog post, two chains are currently supported by `lnd`: Bitcoin and
+Litecoin. As a result of the slight internal modification, the configuration of
+`lnd` has changed a bit.
+
+Previously, one was able to start `lnd` on Bitcoin's testnet with the following
+command:
+
+```
+$ lnd --testnet
+```
+
+However, with `lnd`'s new multi-chain awareness, users will now need to
+explicitly specify which chain `lnd` should run on:
+
+```
+$ lnd --bitcoin.active --bitcoin.testnet
+```
+
+Within `lnd`s configuration file (`lnd.conf`), two new "groups" have been
+added, dedicated to the configuration of parameters for the two chains currently
+supported. As an example, here's a valid configuration file which specifies
+chain-parameters for Litecoin:
+
+```
+[Application Options]
+debuglevel=debug
+
+[Litecoin]
+litecoin.active
+litecoin.rpcuser=kek
+litecoin.rpcpass=kek
+```
+
+To change an `lnd` node to instead be a member of the Lightning Network on
+Bitcoin's testnet, the configuration file would be modified as so:
+```
+[Application Options]
+debuglevel=debug
+
+[Bitcoin]
+bitcoin.active
+bitcoin.rpcuser=kek
+bitcoin.rpcpass=kek
+```
+
+Additionally, the `getinfo` command of `lncli` has been modified to indicate
+which chain `lnd` is currently resident on:
+
+```
+$ lncli getinfo
+{
+    "identity_pubkey": "03cf20bbc6d29b43969fb444c7af2e50c9228872d820fff8a9548a8974206980a5",
+    "alias": "",
+    "num_pending_channels": 0,
+    "num_active_channels": 1,
+    "num_peers": 1,
+    "block_height": 48992,
+    "block_hash": "de77e5a059bc6d15a5a61f58c899f15806a700990991323ac9c18a8e7a2e98e7",
+    "synced_to_chain": true,
+    "testnet": true,
+    "chains": [
+        "litecoin"  <--- new field!!
+    ]
+}
+```
+
+
+`lnd` is able to dynamically switch between the two networks with a simple
+configuration change, and a restart of the daemon. Running on
+Litecoin will require an active `ltcd` instance running, whilst for
+Bitcoin, an active `btcd` instance must be running. This new
+chain-selection feature is now active within the `master` branch of `lnd`. An
+upcoming _major_ release of `lnd` will include this new feature (and many
+more!) packaged within our normal signed releases.
+
+In order to faciltate the testing of `lnd` of Litecoin by both develoeprs and
+users, we've created another [channel
+faucet](http://lightning.community/lnd/faucet/2017/01/19/lightning-network-faucet/)
+dedicated to Litecion's latest testnet. The Litecoin Testnet Channel Faucet can
+be found here:
+[ltc.faucet.lightning.community](https://ltc.faucet.lightning.community/). The
+[source code of the faucet](https://github.com/lightninglabs/lightning-faucet)
+has also been updated to be able to toggle either Bitcoin or Litecoin.
+
+We encourage users of `lnd` to try out the experience on Litecoin. The faster
+block times ease testing and development a bit as scenarios such as opening,
+closing or force closing a channel are carried out much more quickly on
+Litecoin's testnet compared to Bitcoin's testnet.
+
+
+### Coming Soon: A Multi-Chain `lnd`
+
+The latest version of `lnd` resident in the `master` branch has been restricted
+to only support a _single_ chain at a time. In an upcoming release of `lnd`,
+we'll enable `lnd` to be fully _multi-chain aware_. By multi-chain ware, we
+mean that `lnd` will be able to "straddle" multiple chains and fully manage
+channels on all of its active chains. This is a highly anticipated feature as
+Lightning Network daemons that can manage channels on multiple chains are a
+prerequisite for the implementation of: decentralized off-chain cryptocurrency
+exchanges, native off-chain cross-chain payments, and cross-chain atomic swaps.
+
+The changes to `lnd` to add support for _selectable_ single-chain execution
+modes was crafted in a such a way that adding full multi-chain support is an
+additional minor diff. For the time being, though, we're focusing​ our
+development efforts on finalizing, hardening, and achieving stability of
+Lightning on a single chain before venturing out into the exciting world of
+cross-blockchain Lightning!
+
