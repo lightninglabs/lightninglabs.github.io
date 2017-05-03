@@ -27,10 +27,10 @@ preliminary launch on Litecoin.
 
 Similarly, we are also extremely excited at the prospect of an initial
 production run of Lightning on Litecoin! The activation of segwit on Litecoin
-allows us to deploy Litecoin on an active production blockchain.
-With our ultimate launch, we'll be able to examine monetary incentives within
-the network, observe the emergent properties of the networks' channel graph,
-and see the rise of production services and applications built on top of the
+allows us to deploy Lightning on an active production blockchain.  With our
+ultimate launch, we'll be able to examine monetary incentives within the
+network, observe the emergent properties of the networks' channel graph, and
+see the rise of production services and applications built on top of the
 network.
 
 In this post, we're announcing the (simultaneous) support for Litecoin's
