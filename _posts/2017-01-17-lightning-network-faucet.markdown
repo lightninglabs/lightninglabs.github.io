@@ -87,7 +87,7 @@ Finally, to start your `lnd` node, execute the following command (replacing
 "kek" with your chosen `rpcuser` and `rpcpass` for `btcd` selected above)
 
 ```
-lnd --testnet --rpcuser=kek --rpcpass=kek
+lnd --bitcoin.active --bitcoin.testnet --bitcoin.rpcuser=kek --bitcion.rpcpass=kek
 ```
 
 ### Docker Build
@@ -159,6 +159,9 @@ public key:
 	"block_hash": "00000000000007d716eadfd64c238f41ccba93e9b2c3f92a28bb59c9880d1272",
 	"synced_to_chain": true,
 	"testnet": true
+        "chains": [
+            "bitcoin"
+        ]
 }%
 ```
 
