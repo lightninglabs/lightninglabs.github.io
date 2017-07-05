@@ -5,8 +5,6 @@ date:   2017-07-05 08:00:00 -0800
 categories: software lnd lightning
 ---
 
-![Lightning Ecosystem](https://i.imgur.com/mX2Z1cC.jpg)
-
 _By Max Fang_
 
 `lnd` is still in alpha, but we're already seeing a handful of developers
@@ -25,7 +23,7 @@ on Lightning will find helpful.
 
 [https://github.com/CryptoFR/ln-tip-slack](https://github.com/CryptoFR/ln-tip-slack)
 
-![users tip Max on Slack](http://imgur.com/CNnMvfM.jpg)
+<img src="http://imgur.com/CNnMvfM.jpg" alt="users tip Max on Slack" style="width: 200px;"/>
 
 What's the first thing a Bitcoiner builds with micropayments? A tip bot! The
 `lnd`-based successor to ChangeTip, Francois Mably and team built a tip bot on
@@ -42,10 +40,8 @@ username>`` to send a tip. You can try it out here:
 Tangui Clairet, Pierre Lorcery ([@tulsene](https://twitter.com/tulsene)),
 François Masurel ([@francoismasurel](https://twitter.com/francoismasurel))*
 
-{:refdef: style="text-align: center;"}
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Tired but so happy to win the 1st prize ex-aequo of the <a href="https://twitter.com/hashtag/merkleweek?src=hash">#merkleweek</a> hackathon with the <a href="https://twitter.com/hashtag/VoltaChain?src=hash">#VoltaChain</a> team!! So many people to thanks &lt;3 <a href="https://t.co/mHuEgoEz0o">pic.twitter.com/mHuEgoEz0o</a></p>&mdash; Louis (@Aldhyr) <a href="https://twitter.com/Aldhyr/status/841055635286458370">March 12, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{: refdef}
 
 Voltachain is a pay-as-you-go solution for electric vehicle energy purchases,
 using `lnd` as its basis for micropayments. Rethinking the current model of
@@ -108,10 +104,8 @@ slides](https://www.slideshare.net/michaelfolkson/bcoin-hackathon-slides).
 Alex Bosworth built the first `lnd` User Interface for Mac OS! You can see a
 preview of it below:
 
-{:refdef: style="text-align: center;"}
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Working on a <a href="https://twitter.com/lightning">@lightning</a> wallet - looking forward to scaling and micropayment dreams made real. <a href="https://t.co/ZjAOTefCzq">pic.twitter.com/ZjAOTefCzq</a></p>&mdash; Alex UASF Bosworth (@alexbosworth) <a href="https://twitter.com/alexbosworth/status/844030573131706368">March 21, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{: refdef}
 
 ## Lightweight LND Dashboard
 
@@ -139,10 +133,8 @@ and desktop application for the Lightning Network. This in-progress app plans
 to support both bitcoin and litecoin, featuring a slick UI. Watch Alex 'buy a
 coffee' for certain special guest of his here:
 
-{:refdef: style="text-align: center;"}
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Working on a mobile and desktop application for the Lightning Network 😃 <a href="https://twitter.com/lightning">@lightning</a> <a href="https://twitter.com/hashtag/bitcoin?src=hash">#bitcoin</a> <a href="https://twitter.com/hashtag/ltc?src=hash">#ltc</a> <a href="https://t.co/iXu4Rk4Xk9">pic.twitter.com/iXu4Rk4Xk9</a></p>&mdash; Jack UASF Mallers (@JackMallers) <a href="https://twitter.com/JackMallers/status/857357930777149440">April 26, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{: refdef}
 
 ---
 
