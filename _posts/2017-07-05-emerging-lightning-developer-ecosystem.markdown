@@ -28,9 +28,9 @@ on Lightning will find helpful.
 {: refdef}
 
 What's the first thing a Bitcoiner builds with micropayments? A tip bot! The
-`lnd`-based successor to ChangeTip, Francois Mably and team built a tip bot on
-Slack, which is still WIP but usable on Bitcoin testnet. After depositing
-funds, you simply have to type ``/lntip <amount in satoshis> @<Slack
+`lnd`-based successor to ChangeTip, François 'Mably' Masurel and team built a
+tip bot on Slack, which is still WIP but usable on Bitcoin testnet. After
+depositing funds, you simply have to type ``/lntip <amount in satoshis> @<Slack
 username>`` to send a tip. You can try it out here:
 [https://lnd-testnet-2.mably.com/](https://lnd-testnet-2.mably.com/)
 
@@ -115,10 +115,10 @@ preview of it below:
 
 [https://github.com/mably/lncli-web](https://github.com/mably/lncli-web)
 
-Francois Mably and team also built a web client and dashboard for `lnd` written
-in NodeJS / Angular. A few of the other `lnd` projects have used this web
-client as a starting point, speaking to the usefulness of this project. Here
-are a few screenshots:
+François 'Mably' Masurel and team also built a web client and dashboard for
+`lnd` written in NodeJS / Angular. A few of the other `lnd` projects have used
+this web client as a starting point, speaking to the usefulness of this
+project. Here are a few screenshots:
 
 ![image alt text](https://i.imgur.com/d6lh9YN.png)
 
