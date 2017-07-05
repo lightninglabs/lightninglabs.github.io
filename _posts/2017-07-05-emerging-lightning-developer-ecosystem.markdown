@@ -5,9 +5,7 @@ date:   2017-07-05 08:00:00 -0800
 categories: software lnd lightning
 ---
 
-{:refdef: style="text-align: center;"}
-<img src="http://imgur.com/CNnMvfM.jpg" alt="users tip on Slack" style="width: 30em;"/>
-{: refdef}
+<img src="http://imgur.com/CNnMvfM.jpg" alt="users tip on Slack" style="width: 35em;"/>
 
 _By Max Fang_
 
