@@ -6,7 +6,7 @@ categories: software lnd lightning
 ---
 
 {:refdef: style="text-align: center;"}
-![Lightning Tip](http://imgur.com/CNnMvfM.jpg)
+-<img src="http://imgur.com/CNnMvfM.jpg" alt="users tip on Slack" style="width: 30em;"/>
 {: refdef}
 
 _By Max Fang_
