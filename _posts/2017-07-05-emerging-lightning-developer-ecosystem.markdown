@@ -5,6 +5,10 @@ date:   2017-07-05 08:00:00 -0800
 categories: software lnd lightning
 ---
 
+{:refdef: style="text-align: center;"}
+![Lightning Tip](http://imgur.com/CNnMvfM.jpg)
+{: refdef}
+
 _By Max Fang_
 
 `lnd` is still in alpha, but we're already seeing a handful of developers
@@ -22,10 +26,6 @@ on Lightning will find helpful.
 *by François Masurel* ([@francoismasurel](https://twitter.com/francoismasurel))
 
 [https://github.com/CryptoFR/ln-tip-slack](https://github.com/CryptoFR/ln-tip-slack)
-
-{:refdef: style="text-align: center;"}
-<img src="http://imgur.com/CNnMvfM.jpg" alt="users tip Max on Slack" style="width: 30em;"/>
-{: refdef}
 
 What's the first thing a Bitcoiner builds with micropayments? A tip bot! The
 `lnd`-based successor to ChangeTip, François 'Mably' Masurel and team built a
