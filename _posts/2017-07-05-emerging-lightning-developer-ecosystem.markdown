@@ -23,7 +23,9 @@ on Lightning will find helpful.
 
 [https://github.com/CryptoFR/ln-tip-slack](https://github.com/CryptoFR/ln-tip-slack)
 
-<img src="http://imgur.com/CNnMvfM.jpg" alt="users tip Max on Slack" style="width: 200px;"/>
+{:refdef: style="text-align: center;"}
+<img src="http://imgur.com/CNnMvfM.jpg" alt="users tip Max on Slack" style="width: 30em;"/>
+{: refdef}
 
 What's the first thing a Bitcoiner builds with micropayments? A tip bot! The
 `lnd`-based successor to ChangeTip, Francois Mably and team built a tip bot on
