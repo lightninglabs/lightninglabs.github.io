@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "It's Raining Apps: The Emerging Lightning Developer Ecosystem"
+title:  "Lightning Apps and the Emerging Developer Ecosystem on LND"
 date:   2017-07-05 08:00:00 -0800
 categories: software lnd lightning
 ---
