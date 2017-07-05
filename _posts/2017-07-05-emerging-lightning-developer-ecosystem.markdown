@@ -42,8 +42,10 @@ username>`` to send a tip. You can try it out here:
 Tangui Clairet, Pierre Lorcery ([@tulsene](https://twitter.com/tulsene)),
 François Masurel ([@francoismasurel](https://twitter.com/francoismasurel))*
 
+{:refdef: style="text-align: center;"}
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Tired but so happy to win the 1st prize ex-aequo of the <a href="https://twitter.com/hashtag/merkleweek?src=hash">#merkleweek</a> hackathon with the <a href="https://twitter.com/hashtag/VoltaChain?src=hash">#VoltaChain</a> team!! So many people to thanks &lt;3 <a href="https://t.co/mHuEgoEz0o">pic.twitter.com/mHuEgoEz0o</a></p>&mdash; Louis (@Aldhyr) <a href="https://twitter.com/Aldhyr/status/841055635286458370">March 12, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{: refdef}
 
 Voltachain is a pay-as-you-go solution for electric vehicle energy purchases,
 using `lnd` as its basis for micropayments. Rethinking the current model of
@@ -99,19 +101,21 @@ slides](https://www.slideshare.net/michaelfolkson/bcoin-hackathon-slides).
 
 ## Lightning MacOS GUI Wallet
 
-*by Alex Bosworth (@alexbosworth)*
+*by Alex Bosworth ([@alexbosworth](https://twitter.com/alexbosworth))*
 
 [https://github.com/alexbosworth/lnd-gui](https://github.com/alexbosworth/lnd-gui)
 
 Alex Bosworth built the first `lnd` User Interface for Mac OS! You can see a
 preview of it below:
 
+{:refdef: style="text-align: center;"}
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Working on a <a href="https://twitter.com/lightning">@lightning</a> wallet - looking forward to scaling and micropayment dreams made real. <a href="https://t.co/ZjAOTefCzq">pic.twitter.com/ZjAOTefCzq</a></p>&mdash; Alex UASF Bosworth (@alexbosworth) <a href="https://twitter.com/alexbosworth/status/844030573131706368">March 21, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{: refdef}
 
 ## Lightweight LND Dashboard
 
-*by François Masurel (@francoismably)*
+*by François Masurel ([@francoismasurel](https://twitter.com/francoismasurel))*
 
 [https://github.com/mably/lncli-web](https://github.com/mably/lncli-web)
 
@@ -128,15 +132,17 @@ You can find more screenshots here: [https://imgur.com/a/LgWcs](https://imgur.co
 
 ## Mobile and Desktop app for Lightning
 
-*by Jack Mallers (@JackMallers)*
+*by Jack Mallers ([@JackMallers](https://twitter.com/JackMallers))*
 
 We are excited to hear that there's developer energy toward building a mobile
 and desktop application for the Lightning Network. This in-progress app plans
 to support both bitcoin and litecoin, featuring a slick UI. Watch Alex 'buy a
 coffee' for certain special guest of his here:
 
+{:refdef: style="text-align: center;"}
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Working on a mobile and desktop application for the Lightning Network 😃 <a href="https://twitter.com/lightning">@lightning</a> <a href="https://twitter.com/hashtag/bitcoin?src=hash">#bitcoin</a> <a href="https://twitter.com/hashtag/ltc?src=hash">#ltc</a> <a href="https://t.co/iXu4Rk4Xk9">pic.twitter.com/iXu4Rk4Xk9</a></p>&mdash; Jack UASF Mallers (@JackMallers) <a href="https://twitter.com/JackMallers/status/857357930777149440">April 26, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{: refdef}
 
 ---
 
