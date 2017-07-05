@@ -5,7 +5,7 @@ date:   2017-07-05 08:00:00 -0800
 categories: software lnd lightning
 ---
 
-<img src="http://imgur.com/CNnMvfM.jpg" alt="users tip on Slack" style="width: 35em;"/>
+<img src="http://imgur.com/CNnMvfM.jpg" alt="users tip on Slack" style="width: 30em;"/>
 
 _By Max Fang_
 
