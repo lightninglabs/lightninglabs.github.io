@@ -282,7 +282,7 @@ In order to obtain your channel, you'll need to first connect out to the
 faucet's `lnd` node:
 
 ```
-lncli connect 036a0c5ea35df8a528b98edf6f290b28676d51d0fe202b073fe677612a39c0aa09@faucet.lightning.community:5656
+lncli connect 02f1da524a70afd8de6019e2367b47d8d41a623aa3594f55d0785fe1b047c853bc@faucet.lightning.community:9735
 ```
 
 The hex characters within that command are the faucet's public key. The public
@@ -298,9 +298,9 @@ of active peers:
 {
 	"peers": [
 		{
-			"pub_key": "036a0c5ea35df8a528b98edf6f290b28676d51d0fe202b073fe677612a39c0aa09",
+			"pub_key": "02f1da524a70afd8de6019e2367b47d8d41a623aa3594f55d0785fe1b047c853bc",
 			"peer_id": 1,
-			"address": "159.203.125.125:5656",
+			"address": "159.203.125.125:9735",
 			"bytes_sent": 5012,
 			"bytes_recv": 4646
 		}
@@ -343,7 +343,7 @@ making:
 	"pending_channels": [
 		{
 			"peer_id": 1,
-			"identity_key": "036a0c5ea35df8a528b98edf6f290b28676d51d0fe202b073fe677612a39c0aa09",
+			"identity_key": "02f1da524a70afd8de6019e2367b47d8d41a623aa3594f55d0785fe1b047c853bc",
 			"channel_point": "2e9fece24d4db39649edac3991d2e0913277a8ce5aec52e83fcd9c374aefb8d3:0",
 			"capacity": 2060000,
 			"local_balance": 60000,
@@ -363,7 +363,7 @@ be open and you can monitor its state using the `listchannels` command:
 {
 	"channels": [
 		{
-			"remote_pubkey": "036a0c5ea35df8a528b98edf6f290b28676d51d0fe202b073fe677612a39c0aa09",
+			"remote_pubkey": "02f1da524a70afd8de6019e2367b47d8d41a623aa3594f55d0785fe1b047c853bc",
 			"channel_point": "2e9fece24d4db39649edac3991d2e0913277a8ce5aec52e83fcd9c374aefb8d3:0",
 			"chan_id": 1192884354230517760,
 			"capacity": 2005000,
@@ -414,13 +414,13 @@ graph (output is truncated):
 		{
 			"last_update": 1484790531,
 			"pub_key": "021b96642e723592ee0b095983fe3a26c8b40b8926968d8b7510e51c9429d4562c",
-			"address": "[::]:5656",
+			"address": "[::]:9735",
 			"alias": "021b96642e723592ee0b"
 		},
 		{
 			"last_update": 1484470838,
 			"pub_key": "03dd27dc7f994d932b74bebaf18bf801447a514eb4fb33b0f8000b33c036e51ed2",
-			"address": "[::]:5656",
+			"address": "[::]:9735",
 			"alias": "03dd27dc7f994d932b74"
 		}
 	],
@@ -445,7 +445,7 @@ graph (output is truncated):
 			"chan_point": "2e9fece24d4db39649edac3991d2e0913277a8ce5aec52e83fcd9c374aefb8d3:0",
 			"last_update": 1484858485,
 			"node1_pub": "0290bf454f4b95baf9227801301b331e35d477c6b6e7f36a599983ae58747b3828",
-			"node2_pub": "036a0c5ea35df8a528b98edf6f290b28676d51d0fe202b073fe677612a39c0aa09",
+			"node2_pub": "02f1da524a70afd8de6019e2367b47d8d41a623aa3594f55d0785fe1b047c853bc",
 			"capacity": 1999999,
 			"node1_policy": {
 				"time_lock_delta": 1
@@ -530,7 +530,7 @@ channel, we can see the latest state of the channel:
 {
 	"channels": [
 		{
-			"remote_pubkey": "036a0c5ea35df8a528b98edf6f290b28676d51d0fe202b073fe677612a39c0aa09",
+			"remote_pubkey": "02f1da524a70afd8de6019e2367b47d8d41a623aa3594f55d0785fe1b047c853bc",
 			"channel_point": "2e9fece24d4db39649edac3991d2e0913277a8ce5aec52e83fcd9c374aefb8d3:0",
 			"chan_id": 1192884354230517760,
 			"capacity": 2005000,
