@@ -4,7 +4,7 @@ email:       laolu32@gmail.com
 description: >
     Lightning Network community blog!
 baseurl:     "//lightninglabs.github.io"
-url:         "/"
+url:         "//lightninglabs.github.io"
 date_format: "%b %-d, %Y"
 
 # Google services
