@@ -32,7 +32,7 @@ depositing funds, you simply have to type ``/lntip <amount in satoshis> @<Slack
 username>`` to send a tip. You can try it out here:
 [https://lnd-testnet-2.mably.com/](https://lnd-testnet-2.mably.com/)
 
-![image alt text](http://imgur.com/eHLym7J.jpg)
+![image alt text](https://imgur.com/eHLym7J.jpg)
 
 ## Voltachain
 
