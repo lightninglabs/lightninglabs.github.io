@@ -3,8 +3,8 @@ title:       Lightning Network Community Blog
 email:       laolu32@gmail.com
 description: >
     Lightning Network community blog!
-baseurl:     "//lightninglabs.github.io"
-url:         "//lightninglabs.github.io"
+baseurl:     "//lightning.community"
+url:         "/"
 date_format: "%b %-d, %Y"
 
 # Google services
