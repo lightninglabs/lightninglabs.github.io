@@ -30,10 +30,11 @@ fully packaged instance of `lnd` that uses a docker container.
 First, the manual build. Before we begin, ensure that you have
 [`go1.8`](https://golang.org/dl/) installed and also that [your `GOPATH` is
 set properly](https://golang.org/doc/code.html#GOPATH). Finally, you'll also
-need to have [`glide`](https://glide.sh/) installed locally:
+need to have [`glide`](https://glide.sh/) and dep installed locally:
 
 ```
 go get -u -v github.com/Masterminds/glide
+go get -u -v github.com/golang/dep
 ```
 
 #### Installing btcd
@@ -76,7 +77,7 @@ to build and start `lnd`:
 $ cd $GOPATH
 $ git clone https://github.com/lightningnetwork/lnd $GOPATH/src/github.com/lightningnetwork/lnd
 $ cd $GOPATH/src/github.com/lightningnetwork/lnd
-$ glide install
+$ dep ensure
 $ go install . ./cmd/...
 ```
 
@@ -87,7 +88,7 @@ Finally, to start your `lnd` node, execute the following command (replacing
 "kek" with your chosen `rpcuser` and `rpcpass` for `btcd` selected above)
 
 ```
-lnd --bitcoin.active --bitcoin.testnet --bitcoin.rpcuser=kek --bitcion.rpcpass=kek
+lnd --bitcoin.active --bitcoin.testnet --btcd.rpcuser=kek --btcd.rpcpass=kek
 ```
 
 ### Docker Build
