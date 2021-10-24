@@ -5,7 +5,7 @@ permalink: /about/
 tags: about
 ---
 
-This is a community blog for the [Lightning Network](lightninganetwork)
+This is a community blog for the [Lightning Network](//lightning.network)
 operated by Lightning Labs. This blog will track the latest developments in the
 Lightning Network specifications, software releases, community integration, and
 new Layer 2 applications.
